@@ -29,7 +29,7 @@ public class StartActivity extends AppCompatActivity {
         botAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         imageView = findViewById(R.id.imageViewStart);
-        logo = findViewById(R.id.textViewstart);
+        logo = findViewById(R.id.textViewStart);
 
         imageView.setAnimation(topAnim);
         logo.setAnimation(botAnim);
