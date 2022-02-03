@@ -21,9 +21,10 @@
         android:id="@+id/logoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="40sp"
-        android:fontFamily="@font/bangers"/>
+        android:fontFamily="sans-serif-black"
+        android:text="@string/izmir_travel_application_welcome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="38sp" />
 
     <TextView
         android:id="@+id/sloganName"
@@ -31,7 +32,8 @@
         android:layout_height="wrap_content"
         android:text="@string/sign_in_to_contunie"
         android:textSize="20sp"
-        android:fontFamily="@font/bangers"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:layout_marginTop="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,37 +71,32 @@
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:background="@color/purple_500"
             android:text="@string/forget_password"
             android:layout_gravity="right"
-            android:elevation="0dp" />
+            android:layout_margin="5dp"
+            android:elevation="0dp"
+            android:background="#00000000"
+            android:textColor="#000"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_500"
             android:text="@string/go"
-            android:textColor="@color/white"
-            android:layout_margin="5dp"
+            android:background="#000"
+            android:textColor="#fff"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
         />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="#00000000"
             android:text="@string/new_user_sign_up"
             android:elevation="0dp"
-            android:layout_margin="5dp" />
-
-
-
-
-
+            android:layout_margin="5dp"
+            android:textColor="#000"/>
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>
