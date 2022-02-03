@@ -7,7 +7,7 @@
     tools:context=".RegisterActivity"
     android:orientation="vertical"
     android:background="#FBFFE2"
-    android:padding="20dp">
+    android:padding="15dp">
 
     <ImageView
         android:layout_width="150dp"
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="5dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name"
@@ -125,6 +125,12 @@
         android:layout_height="wrap_content"
         android:text="Already have an account? LogIn"
         android:background="@color/white" />
+
+    <ImageButton
+        android:layout_width="380dp"
+        android:layout_height="50sp"
+        app:srcCompat="@drawable/google"
+        android:scaleType="center"/>
 
 
 </LinearLayout>
