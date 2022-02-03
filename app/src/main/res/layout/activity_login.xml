@@ -79,8 +79,7 @@
             android:layout_gravity="right"
             android:elevation="0dp"
             android:layout_margin="5dp"
-            android:textColor="#000"
-            tools:ignore="RtlHardcoded" />
+            android:textColor="#000" />
 
 
         <Button
