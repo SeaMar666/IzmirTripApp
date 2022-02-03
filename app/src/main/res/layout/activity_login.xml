@@ -84,8 +84,8 @@
             android:text="@string/go"
             android:background="#000"
             android:textColor="#fff"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
         />
 
         <Button
