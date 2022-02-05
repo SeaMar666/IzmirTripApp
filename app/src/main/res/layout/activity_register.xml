@@ -123,8 +123,7 @@
         android:layout_width="380dp"
         android:layout_height="45sp"
         app:srcCompat="@drawable/google"
-        android:scaleType="center"
-        />
+        android:scaleType="center" />
 
     <Button
         android:layout_width="match_parent"
