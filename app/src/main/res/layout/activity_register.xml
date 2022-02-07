@@ -130,7 +130,7 @@
         android:layout_width="380dp"
         android:layout_height="55sp"
         app:srcCompat="@drawable/google"
-        android:scaleType="center"/>
+        android:scaleType="center" />
 
 
 </LinearLayout>
