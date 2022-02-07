@@ -30,8 +30,7 @@
         android:layout_height="wrap_content"
         android:transitionName="sloganName"
         android:text="@string/signup_to_create_your_new_journey"
-        android:textSize="18dp"
-        />
+        android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
