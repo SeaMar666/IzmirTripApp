@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:transitionName="logo_image"
+        android:transitionName="logoImage"
         android:src="@drawable/izmirlogo2"/>
 
     <TextView
@@ -20,28 +20,26 @@
         android:layout_height="wrap_content"
         android:text="@string/welcome"
         android:textSize="40sp"
-        android:transitionName="logo_text"
+        android:transitionName="logoName"
         android:fontFamily="@font/bangers"
         android:layout_marginTop="-20dp"
-        />
+        android:textColor="#000"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:transitionName="logo_desc"
+        android:transitionName="sloganName"
         android:text="@string/signup_to_create_your_new_journey"
-        android:textSize="20sp"
-        android:fontFamily="@font/bangers"/>
+        android:textSize="18dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginTop="5dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reg_name"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/full_name"
@@ -55,10 +53,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reg_username"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_name"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -69,7 +69,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reg_email"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
@@ -83,7 +83,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reg_phoneNo"
+            android:id="@+id/phoneNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_no"
@@ -97,7 +97,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reg_password"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -114,26 +114,23 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/reg_btn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="@string/Go"
+        android:layout_height="wrap_content"
+        android:text="Go"
         android:background="@color/purple_500"
         android:textColor="@color/white" />
 
-    <ImageButton
-        android:layout_width="380dp"
-        android:layout_height="45sp"
-        app:srcCompat="@drawable/google"
-        android:scaleType="center" />
-
     <Button
-        android:id="@+id/reg_login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/already_have_an_account_login"
-        android:background="#00000000"
-        android:textColor="#000"
-       />
+        android:text="Already have an account? LogIn"
+        android:background="@color/white" />
+
+    <ImageButton
+        android:layout_width="380dp"
+        android:layout_height="55sp"
+        app:srcCompat="@drawable/google"
+        android:scaleType="center"/>
+
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">IzmirTripApp</string>
     <string name="izmir_travel_application">Izmir Travel Application</string>
+    <string name="izmir_travel_application_welcome">Welcome To Izmir Travel Application</string>
     <string name="login">LOGIN</string>
     <string name="register">REGISTER</string>
     <string name="sign_in_to_contunie">Sign In To Contunie</string>
@@ -14,7 +15,6 @@
     <string name="user_name">User Name</string>
     <string name="email">Email</string>
     <string name="phone_no">Phone No</string>
-    <string name="password">Password</string>
     <string name="welcome">Welcome,</string>
     <string name="already_have_an_account_login">Already have an account? LogIn</string>
     <string name="Go">Go</string>
