@@ -103,9 +103,14 @@
             android:transitionName="login_signup_tran"
             android:textColor="#000"/>
 
+        <ImageButton
+            android:id="@+id/googleLogin"
+            android:layout_width="380dp"
+            android:layout_height="55sp"
+            app:srcCompat="@drawable/google"
+            android:scaleType="center" />
+
     </LinearLayout>
-
-
 
 
 </LinearLayout>

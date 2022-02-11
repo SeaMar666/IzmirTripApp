@@ -1,4 +1,4 @@
-package com.example.izmirtripapp;
+package com.example.izmirtripapp.Model;
 
 public class UserHelperClass {
     String name, username, email, phoneNo, password;

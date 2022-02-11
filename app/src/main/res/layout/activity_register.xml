@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:transitionName="sloganName"
         android:text="@string/signup_to_create_your_new_journey"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
         android:layout_marginTop="5dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/name"
+            android:id="@+id/reg_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/full_name"
@@ -53,23 +53,21 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username"
+            android:id="@+id/reg_lastname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user_name"
-            app:counterEnabled="true"
-            app:counterMaxLength="15"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:hint="@string/last_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email"
+            android:id="@+id/reg_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
@@ -83,7 +81,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/phoneNo"
+            android:id="@+id/reg_phoneNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_no"
@@ -97,7 +95,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
+            android:id="@+id/reg_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -114,16 +112,18 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/reg_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go"
+        android:text="@string/go"
         android:background="@color/purple_500"
         android:textColor="@color/white" />
 
     <Button
+        android:id="@+id/reg_login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Already have an account? LogIn"
+        android:text="Already have an account? Sign in"
         android:background="@color/white" />
 
     <ImageButton
