@@ -16,7 +16,7 @@
     <string name="email">Email</string>
     <string name="phone_no">Phone No</string>
     <string name="welcome">Welcome,</string>
-    <string name="already_have_an_account_login">Already have an account? LogIn</string>
     <string name="Go">Go</string>
+    <string name="already_have_an_account_login">Already have an account? LogIn</string>
 
 </resources>
