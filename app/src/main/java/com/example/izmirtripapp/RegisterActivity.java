@@ -4,20 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-<<<<<<< Updated upstream
-
-public class RegisterActivity extends AppCompatActivity {
-
-=======
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.izmirtripapp.Model.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -37,8 +30,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    TextInputLayout regName, regLastname, regEmail, regPhoneNo, regPassword;
-    Button regBtn, regToLoginBtn;
+    TextInputLayout regName, regUsername, regEmail, regPhoneNo, regPassword;
+    Button  regBtn, regToLoginBtn;
 
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
@@ -47,13 +40,11 @@ public class RegisterActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     SignInButton btn;
 
->>>>>>> Stashed changes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-<<<<<<< Updated upstream
-=======
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         regName = findViewById(R.id.reg_name);
@@ -80,6 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
         //      .build();
 
         //mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
         mAuth = FirebaseAuth.getInstance();
         btn = findViewById(R.id.login);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -92,12 +84,12 @@ public class RegisterActivity extends AppCompatActivity {
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String name = regName.getEditText().getText().toString();
                 String username = regLastname.getEditText().getText().toString();
                 String email = regEmail.getEditText().getText().toString();
                 String phoneNo = regPhoneNo.getEditText().getText().toString();
                 String password = regPassword.getEditText().getText().toString();
-
                 if (name.isEmpty()) {
                     regName.setError("Full name is required.");
                     regName.requestFocus();
@@ -163,13 +155,15 @@ public class RegisterActivity extends AppCompatActivity {
                         });
             }
         });
->>>>>>> Stashed changes
+
     }
 
     private void sign() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -211,10 +205,12 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
+
         if (user != null) {
             Toast.makeText(RegisterActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(RegisterActivity.this, "Something Error", Toast.LENGTH_LONG).show();
+
         }
     }
 

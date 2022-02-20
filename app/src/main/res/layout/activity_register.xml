@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:transitionName="sloganName"
         android:text="@string/signup_to_create_your_new_journey"
-        android:textSize="18dp"/>
+        android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -127,14 +127,12 @@
         android:layout_height="40dp"
         android:text="@string/already_have_an_account_login"
         android:background="@color/white" />
-
-<<<<<<< Updated upstream
     <ImageButton
         android:layout_width="380dp"
         android:layout_height="55sp"
         app:srcCompat="@drawable/google"
         android:scaleType="center"/>
-=======
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -151,7 +149,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> Stashed changes
-
 
 </LinearLayout>

@@ -15,7 +15,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/izmirlogo2"
-        android:transitionName="logoImage"
+        android:transitionName="logo_image"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:transitionName="logoName"
+        android:transitionName="logo_text"
         android:textSize="40sp"
         android:fontFamily="@font/bangers"/>
 
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_in_to_contunie"
-        android:transitionName="sloganName"
+        android:transitionName="logo_desc"
         android:textSize="20sp"
         android:fontFamily="@font/bangers"/>
 
