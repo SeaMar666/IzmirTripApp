@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -34,13 +33,9 @@ public class RegisterActivity extends AppCompatActivity {
     TextInputLayout regName, regUsername, regEmail, regPhoneNo, regPassword;
     Button  regBtn, regToLoginBtn;
 
-    FirebaseDatabase rootNode;
-    DatabaseReference reference;
-
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth mAuth;
-    // [END declare_auth]
 
     private GoogleSignInClient mGoogleSignInClient;
     SignInButton btn;
@@ -50,20 +45,33 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         regName = findViewById(R.id.reg_name);
-        regUsername = findViewById(R.id.reg_username);
+        regLastname = findViewById(R.id.reg_userName);
         regEmail = findViewById(R.id.reg_email);
         regPhoneNo = findViewById(R.id.reg_phoneNo);
         regPassword = findViewById(R.id.reg_password);
         regBtn = findViewById(R.id.reg_btn);
         regToLoginBtn = findViewById(R.id.reg_login_btn);
+        regToLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
+        mAuth = FirebaseAuth.getInstance();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        //GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        //       .requestIdToken(getString(R.string.default_web_client_id))
+        //      .requestEmail()
+        //      .build();
+
+        //mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
         mAuth = FirebaseAuth.getInstance();
         btn = findViewById(R.id.login);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -76,26 +84,86 @@ public class RegisterActivity extends AppCompatActivity {
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("users");
 
                 String name = regName.getEditText().getText().toString();
-                String username = regUsername.getEditText().getText().toString();
+                String username = regLastname.getEditText().getText().toString();
                 String email = regEmail.getEditText().getText().toString();
                 String phoneNo = regPhoneNo.getEditText().getText().toString();
                 String password = regPassword.getEditText().getText().toString();
+                if (name.isEmpty()) {
+                    regName.setError("Full name is required.");
+                    regName.requestFocus();
+                    return;
+                }
+                if (username.isEmpty()) {
+                    regName.setError("Username is required.");
+                    regName.requestFocus();
+                    return;
+                }
+                if (phoneNo.isEmpty()) {
+                    regName.setError("Phone no is required.");
+                    regName.requestFocus();
+                    return;
+                }
+                if (email.isEmpty()) {
+                    regName.setError("Email is required.");
+                    regName.requestFocus();
+                    return;
+                }
 
-                UserHelperClass helperClass = new UserHelperClass(name,username,email,phoneNo,password);
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    regEmail.setError("Please enter a valid email.");
+                    regEmail.requestFocus();
+                    return;
+                }
 
-                reference.child(name).setValue(helperClass);
+                if (password.isEmpty()) {
+                    regPassword.setError("Email is required.");
+                    regPassword.requestFocus();
+                    return;
+                }
+                if (password.length() < 6) {
+                    regPassword.setError("Password is required.");
+                    regPassword.requestFocus();
+                    return;
+                }
+                mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                if (task.isSuccessful()) {
+                                    User user = new User(name, username, email, phoneNo, password);
+
+                                    FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Toast.makeText(RegisterActivity.this, "FUser has been registered successfully!", Toast.LENGTH_LONG).show();
+                                            } else {
+                                                Toast.makeText(RegisterActivity.this, "Failed to register!Try again!", Toast.LENGTH_LONG).show();
+                                                Log.e("User Error", "signInWithEmailAndPassword", task.getException());
+                                            }
+                                        }
+                                    });
+                                } else {
+                                    Toast.makeText(RegisterActivity.this, "Failed to register!", Toast.LENGTH_LONG).show();
+                                    Log.e("Register Error", "signInWithEmailAndPassword", task.getException());
+                                }
+                            }
+                        });
             }
         });
+
     }
 
     private void sign() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -137,10 +205,12 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        if(user != null){
-            Toast.makeText(RegisterActivity.this,"Login Successful",Toast.LENGTH_LONG).show();
-        }else {
-            Toast.makeText(RegisterActivity.this,"Something Error",Toast.LENGTH_LONG).show();
+
+        if (user != null) {
+            Toast.makeText(RegisterActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(RegisterActivity.this, "Something Error", Toast.LENGTH_LONG).show();
+
         }
     }
 

@@ -53,10 +53,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reg_username"
+            android:id="@+id/reg_userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user_name"
+            android:hint="@string/username"
             app:counterEnabled="true"
             app:counterMaxLength="15"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -127,6 +127,11 @@
         android:layout_height="40dp"
         android:text="@string/already_have_an_account_login"
         android:background="@color/white" />
+    <ImageButton
+        android:layout_width="380dp"
+        android:layout_height="55sp"
+        app:srcCompat="@drawable/google"
+        android:scaleType="center"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -144,6 +149,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </LinearLayout>

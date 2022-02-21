@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/drawable/rounded.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/font/bangers.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_start.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_start.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_home_page.xml" value="0.1" />
+        
       </map>
     </option>
   </component>
