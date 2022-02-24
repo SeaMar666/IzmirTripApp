@@ -94,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     Toast.makeText(LoginActivity.this,"Login successful!", Toast.LENGTH_LONG).show();
 
+
                 }else
                     Log.e("Login Error", "signInWithEmailAndPassword", task.getException());
                 Toast.makeText(LoginActivity.this,"Failed to login!", Toast.LENGTH_LONG).show();

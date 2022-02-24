@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IzmirTripApp">
         <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Likes"
+            android:exported="false" />
+        <activity
+            android:name=".Route"
+            android:exported="false" />
+        <activity
+            android:name=".Search"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -17,6 +29,9 @@
             android:exported="false" />
         <activity
             android:name=".StartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomePage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
