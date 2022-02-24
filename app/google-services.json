@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "902202333734",
+    "firebase_url": "https://izmirtripapp-3be5b-default-rtdb.firebaseio.com",
+    "project_id": "izmirtripapp-3be5b",
+    "storage_bucket": "izmirtripapp-3be5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902202333734:android:0870ba278ddb778b7de4e7",
+        "android_client_info": {
+          "package_name": "com.example.izmirtripapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902202333734-kbcq6nqutpotmal4ku8gl83p3a215gem.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.izmirtripapp",
+            "certificate_hash": "9bc4bc490bfe7b67558c47cf309f31b00dc70729"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7wOYnSzBcFbwRAur4bthQhDD7nZ22Dv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
