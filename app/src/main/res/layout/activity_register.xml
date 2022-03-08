@@ -57,8 +57,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/username"
-            app:counterEnabled="true"
-            app:counterMaxLength="15"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -139,7 +137,7 @@
         android:background="@color/white" />
 
     <ImageButton
-        android:id="@+id/googleLogin"
+        android:id="@+id/googleSignIn"
         android:layout_width="380dp"
         android:layout_height="55sp"
         app:srcCompat="@drawable/google"

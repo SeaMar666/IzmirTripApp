@@ -3,6 +3,7 @@ package com.example.izmirtripapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -38,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private GoogleSignInClient mGoogleSignInClient;
-    SignInButton btn;
+    ImageButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         mAuth = FirebaseAuth.getInstance();
-        btn = findViewById(R.id.googleLogin);
+        btn = findViewById(R.id.googleSignIn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
