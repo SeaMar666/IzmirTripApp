@@ -21,6 +21,13 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="Content">Content of The Place</string>
     <string name="links_for_place">LINKS FOR PLACE</string>
-
+    <string name="search_address">Ara...</string>
+    <string name="save">Kaydet</string>
+    <string name="use_this_address">Kaydet</string>
+    <string name="add_address">Add Route</string>
+    <string name="cant_find_address">Adres Bulunamadi</string>
+    <string name="address_title">Adres Başlığı</string>
+    <string name="address">Adres</string>
+    <string name="cannot_be_blank">Boş Geçilemez</string>
 
 </resources>

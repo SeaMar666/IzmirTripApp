@@ -2,11 +2,10 @@ package com.example.izmirtripapp.Model;
 
 public class PlaceData {
     private String title;
-    private Integer image;
+    private String image;
 
-    public PlaceData(String title,Integer image) {
-        this.title = title;
-        this.image = image;
+    public PlaceData() {
+
     }
 
     public String getTitle() {
@@ -17,11 +16,11 @@ public class PlaceData {
         this.title = title;
     }
 
-    public Integer getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Integer image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }

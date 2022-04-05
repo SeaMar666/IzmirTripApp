@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    map:theme="@style/mapsTheme"
+    tools:context=".AddRouteActivity">
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/bGoToMyLocation"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_baseline_my_location_24"
+        android:tint="@android:color/white"
+        map:borderWidth="0dp"
+        map:elevation="3dp"
+        map:fabCustomSize="45dp"
+        map:layout_constraintBottom_toTopOf="@+id/button_use_address"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:pressedTranslationZ="10dp"
+        map:tint="@android:color/white" />
+
+    <Button
+        android:id="@+id/button_use_address"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_location_save"
+        android:text="@string/use_this_address"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toStartOf="@+id/map"
+        map:layout_constraintStart_toEndOf="@+id/map" />
+
+    <LinearLayout
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="195dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:translationZ="100dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/address_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/selected_location_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_location_tag"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/find_user_location_progress"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:translationZ="150dp"
+                map:layout_constraintBottom_toBottomOf="@+id/selected_location_text"
+                map:layout_constraintEnd_toEndOf="@+id/selected_location_text"
+                map:layout_constraintStart_toStartOf="@+id/selected_location_text"
+                map:layout_constraintTop_toTopOf="@+id/selected_location_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_user_location" />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/save_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:translationY="200dp"
+
+        android:translationZ="500dp"
+        android:visibility="gone"
+        map:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            map:boxBackgroundMode="outline"
+            map:boxStrokeWidth="0.8dp">
+
+            <EditText
+                android:id="@+id/address_desc"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:hint="@string/address_title"
+                android:padding="5dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            map:boxBackgroundMode="outline"
+            map:boxStrokeWidth="0.8dp">
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:hint="@string/address"
+                android:lines="1"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_location_save"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toStartOf="@+id/map"
+            map:layout_constraintStart_toEndOf="@+id/map" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
