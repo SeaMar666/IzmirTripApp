@@ -3,6 +3,8 @@ package com.example.izmirtripapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.content.Intent;
@@ -23,6 +25,9 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
+import com.google.android.material.snackbar.Snackbar;
+
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -208,5 +213,4 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, "Something Error", Toast.LENGTH_LONG).show();
         }
     }
-
 }
