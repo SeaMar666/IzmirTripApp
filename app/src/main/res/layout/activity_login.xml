@@ -44,7 +44,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/userName"
+            android:id="@+id/usernameLogin"
             android:hint="@string/username"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
+            android:id="@+id/passwordLogin"
             android:hint="@string/password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -91,7 +91,7 @@
             android:layout_margin="5dp"
             android:layout_marginBottom="5dp"
             android:transitionName="button_tran"
-        />
+            />
 
         <Button
             android:id="@+id/signup_screen"
@@ -104,9 +104,14 @@
             android:transitionName="login_signup_tran"
             android:textColor="#000"/>
 
+        <ImageButton
+            android:id="@+id/googleLogin"
+            android:layout_width="380dp"
+            android:layout_height="55sp"
+            app:srcCompat="@drawable/google"
+            android:scaleType="center" />
+
     </LinearLayout>
-
-
 
 
 </LinearLayout>

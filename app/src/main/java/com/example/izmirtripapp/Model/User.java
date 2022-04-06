@@ -1,14 +1,14 @@
-package com.example.izmirtripapp;
+package com.example.izmirtripapp.Model;
 
-public class UserHelperClass {
-    String name, username, email, phoneNo, password;
+public class User {
+    String name, lastName, email, phoneNo, password;
 
-    public UserHelperClass() {
+    public User() {
     }
 
-    public UserHelperClass(String name, String username, String email, String phoneNo, String password) {
+    public User(String name, String lastName, String email, String phoneNo, String password) {
         this.name = name;
-        this.username = username;
+        this.lastName = lastName;
         this.email = email;
         this.phoneNo = phoneNo;
         this.password = password;
@@ -23,11 +23,11 @@ public class UserHelperClass {
     }
 
     public String getUsername() {
-        return username;
+        return lastName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
