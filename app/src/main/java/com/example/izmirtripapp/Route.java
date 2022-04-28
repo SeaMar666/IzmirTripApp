@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.example.izmirtripapp.Model.Routes;
+import com.example.izmirtripapp.Search.Search;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -114,7 +115,7 @@ public class Route extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.search:
-                        startActivity(new Intent(getApplicationContext(),Search.class));
+                        startActivity(new Intent(getApplicationContext(), Search.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.route:

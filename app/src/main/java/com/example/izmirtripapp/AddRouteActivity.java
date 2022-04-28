@@ -4,6 +4,7 @@ import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,6 +12,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
@@ -22,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +33,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.izmirtripapp.Model.Routes;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -38,6 +42,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
@@ -49,7 +54,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class AddRouteActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMyLocationClickListener, GoogleMap.OnMyLocationButtonClickListener {
+public class AddRouteActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMyLocationClickListener, GoogleMap.OnMyLocationButtonClickListener {
 
     Geocoder geocoder;
     List<Address> addresses;
@@ -72,10 +77,42 @@ public class AddRouteActivity extends AppCompatActivity implements OnMapReadyCal
             latString = "",
             lonString = "";
 
+    SupportMapFragment mapFragment;
+    SearchView searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_route);
+
+        searchView = findViewById(R.id.sv_location);
+        mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                String location = searchView.getQuery().toString();
+                List<Address> addressList = null;
+                if (location != null || !location.equals("")){
+                    Geocoder geocoder = new Geocoder(AddRouteActivity.this);
+                    try {
+                        addressList = geocoder.getFromLocationName(location,1);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Address address = addressList.get(0);
+                    LatLng latLng = new LatLng(address.getLatitude(),address.getLongitude());
+                    googleMap.addMarker(new MarkerOptions().position(latLng).title(location));
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        mapFragment.getMapAsync(this);
 
         selected_location_text = findViewById(R.id.selected_location_text);
         find_user_location_progress = findViewById(R.id.find_user_location_progress);
@@ -105,6 +142,13 @@ public class AddRouteActivity extends AppCompatActivity implements OnMapReadyCal
                 getAddressString();
                 animateSaveLayout(true);
 
+              //  String sSource = address_edit.getText().toString().trim();
+              //  String sDestination = address_desc_edit.getText().toString().trim();
+              //  if (sSource.equals("") && sDestination.equals("")){
+                //Toast.makeText(getApplicationContext(),"Enter both location",Toast.LENGTH_SHORT).show();
+               // }else {
+                 //   DisplayTrack(sSource,sDestination);
+               // }
 
             }
         });
@@ -146,6 +190,21 @@ public class AddRouteActivity extends AppCompatActivity implements OnMapReadyCal
         FloatingActionButton bGoToMyLocation = findViewById(R.id.bGoToMyLocation);
         bGoToMyLocation.setOnClickListener(this);
     }
+
+ //   private void DisplayTrack(String sSource, String sDestination) {
+  //      try {
+    //        Uri uri = Uri.parse("http://www.google.co.in/maps/dir/" + sSource + "/" +sDestination);
+      //      Intent intent= new Intent(Intent.ACTION_VIEW,uri);
+        //    intent.setPackage("com.google.android.apps.maps");
+          //  intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+           // startActivity(intent);
+      //  }catch (ActivityNotFoundException e){
+        //    Uri uri = Uri.parse("http://play.google.com/store/apps/details?id=com.google.android.apps.maps");
+          //  Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+        //    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          //  startActivity(intent);
+     //   }
+   // }
 
     private void animateSaveLayout(Boolean isStart) {
         if (isStart) {

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.izmirtripapp.Search.Search;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Likes extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class Likes extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.search:
-                        startActivity(new Intent(getApplicationContext(),Search.class));
+                        startActivity(new Intent(getApplicationContext(), Search.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.route:

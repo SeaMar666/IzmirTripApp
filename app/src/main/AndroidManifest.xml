@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -18,12 +17,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IzmirTripApp">
+
+        <activity
+            android:name=".Others.Others"
+            android:exported="false" />
+        <activity
+            android:name=".Events.Events"
+            android:exported="false" />
+        <activity
+            android:name=".Cafes.RestaurantsandCafes"
+            android:exported="false" />
+        <activity
+            android:name=".Museums.Museum"
+            android:exported="false" />
         <activity
             android:name=".AddRouteActivity"
             android:exported="true" />
+
+        <meta-data android:name="com.google.android.geo.API_key"
+            android:value="AIzaSyCFJwT9EIKxb79h7nS_D4N5MJIDxqTxrzc"/>
+
         <activity
             android:name=".PlaceDetailActivity"
             android:exported="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBoN2Gh_J0JzPE-LXLxYsW9XbrmplcCC-I" />
@@ -38,7 +55,7 @@
             android:name=".Route"
             android:exported="false" />
         <activity
-            android:name=".Search"
+            android:name=".Search.Search"
             android:exported="false" />
         <activity
             android:name=".HomePage"

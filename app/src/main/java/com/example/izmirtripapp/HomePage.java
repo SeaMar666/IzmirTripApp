@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.izmirtripapp.Model.PlaceData;
+import com.example.izmirtripapp.Search.Search;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -60,7 +61,7 @@ public class HomePage extends AppCompatActivity {
                     case R.id.home:
                         return true;
                     case R.id.search:
-                        startActivity(new Intent(getApplicationContext(),Search.class));
+                        startActivity(new Intent(getApplicationContext(), Search.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.route:

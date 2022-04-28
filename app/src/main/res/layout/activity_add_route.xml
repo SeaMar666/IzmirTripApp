@@ -8,6 +8,7 @@
     tools:context=".AddRouteActivity">
 
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/bGoToMyLocation"
         android:layout_width="45dp"
@@ -89,12 +90,12 @@
                 map:layout_constraintTop_toTopOf="@+id/selected_location_text" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_user_location" />
     </LinearLayout>
+
 
     <fragment
         android:id="@+id/map"
@@ -105,6 +106,20 @@
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent" />
+
+
+    <SearchView
+        android:id="@+id/sv_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round"
+        android:elevation="5dp"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@color/white"
+        android:queryHint="Search..."
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp" />
+
 
     <LinearLayout
         android:id="@+id/save_layout"
@@ -117,6 +132,7 @@
         android:translationZ="500dp"
         android:visibility="gone"
         map:layout_constraintBottom_toBottomOf="parent">
+
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -177,4 +193,5 @@
             map:layout_constraintEnd_toStartOf="@+id/map"
             map:layout_constraintStart_toEndOf="@+id/map" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
