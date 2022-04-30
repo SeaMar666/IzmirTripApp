@@ -15,6 +15,7 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_login.xml" value="0.21331521739130435" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_place_detail.xml" value="0.2" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/popular_list.xml" value="0.264" />
         <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.116" />
         <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.3635" />
@@ -27,6 +28,9 @@
         <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/drawable/rounded_location_save.xml" value="0.116" />
         <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/drawable/rounded_location_search.xml" value="0.116" />
         <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/drawable/rounded_location_tag.xml" value="0.116" />
+=======
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/IzmirTripApp/app/src/main/res/layout/popular_list.xml" value="0.1" />
+>>>>>>> Stashed changes
         <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/drawable/selector.xml" value="0.351" />
         <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/drawable/serlector.xml" value="0.3635" />
         <entry key="..\:/Users/ilgaz/AndroidStudioProjects/IzmirTripApp/app/src/main/res/font/bangers.xml" value="0.3927083333333333" />
