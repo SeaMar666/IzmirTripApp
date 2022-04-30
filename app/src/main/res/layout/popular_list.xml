@@ -2,47 +2,65 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
+    app:cardUseCompatPadding="true">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="190dp"
-        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="180dp">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/poplarListImageView"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/wine_image" />
+
+
+        <TextView
+            android:id="@+id/listName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@id/poplarListImageView"
+            android:text="Title"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/poplarListImageView"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/wine_image" />
+        <TextView
+            android:id="@+id/placeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@id/poplarListImageView"
+            android:text="Place Name"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/fav"
+            android:layout_width="72dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="340dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="100dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_favorite_border_24" />
 
-                <TextView
-                    android:id="@+id/listName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Title"
-                    android:textColor="#000"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
+
+
+
