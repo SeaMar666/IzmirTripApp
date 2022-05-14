@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".Profile">
 
@@ -15,5 +15,167 @@
         app:itemIconTint="@drawable/serlector"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout
+        android:id="@+id/rellay1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/grad"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/imgUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle_border">
+
+            <ImageView
+                android:id="@+id/userImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
+                android:adjustViewBounds="true"
+                android:padding="3dp"
+                android:scaleType="centerInside" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/settings"
+            android:layout_width="53dp"
+            android:layout_height="51dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_baseline_settings_24" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rellay1"
+        android:layout_marginTop="-6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="101dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#91D2DD"
+                    android:text="User Name"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="nameUser"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="89dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#91D2DD"
+                    android:text="Email"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/userMail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="mail"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#91D2DD"
+                    android:text="Phone"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/userPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="+1-202-555-0157"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/select"
+            android:layout_width="205dp"
+            android:layout_height="60dp"
+            android:text="Select Image" />
+
+        <Button
+            android:id="@+id/upload"
+            android:layout_toRightOf="@id/select"
+            android:layout_width="205dp"
+            android:layout_height="60dp"
+            android:text="Upload Image" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_navigator"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="300dp"
+        android:text="@string/logout" />
+
 
 </RelativeLayout>

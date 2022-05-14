@@ -18,7 +18,6 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-
 public class LoginActivity extends AppCompatActivity {
 
     Button signupButton, loginBtn;

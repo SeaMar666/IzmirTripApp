@@ -21,13 +21,13 @@
         android:id="@+id/popularPlacesRecView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/my_toolbar"
         android:layout_above="@+id/bottom_navigator"
+        android:layout_below="@+id/my_toolbar"
         android:layout_marginStart="2dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="2dp"
-        android:background="#BDBD" />
+        android:background="@drawable/grad" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -36,6 +36,6 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 </RelativeLayout>
